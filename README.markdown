@@ -5,8 +5,11 @@ Installation
 -----------
 
 `gem install bundle #if you don't have it installed`
+
 `git clone git@github.com:vieron/nanoc-compass-bootstrap.git your-project-name #clone the repository`
+
 `cd your-project-name`
+
 `bundle install #Install all the gems necesary for tools works`'
 
 It's recommended prior knowledge of [nanoc](http://nanoc.stoneship.org/) and [compass](http://compass-style.org/) tools.
