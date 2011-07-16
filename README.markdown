@@ -4,7 +4,7 @@ Nanoc-Driven ToolKit for agile static-project development
 Installation
 -----------
 
-`$ gem install bundle` #if you don't have it installed
+`$ gem install bundler` #if you don't have it installed
 
 `$ git clone git@github.com:vieron/nanoc-compass-bootstrap.git your-project-name` #clone the repository
 
