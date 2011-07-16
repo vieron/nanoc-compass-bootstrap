@@ -24,6 +24,7 @@ Tools included
   http://compass-style.org
 
 
+
 ####Compass Estensions####
   
 - **Compass rgbapng Extension**
@@ -32,12 +33,16 @@ Tools included
   
   rgbapng is a Compass plugin for providing cross browser compatible RGBA support. It works by creating     single pixel alpha-transparent PNGs on the fly for browsers that don't support RGBA. It uses the pure Ruby ChunkyPNG library resulting in hassle-free installation and deployment.
 
+
 - **Compass OMG-TEXT Extension**
 
   http://jaredhardy.com/omg-text/
   
   https://github.com/jhardy/OMG-TEXT
   The omg-text extension provides a mixin with a simple syntax for creating your awesome text shadows. There are three shadow styles for you choose from, flat, shaded, and offset.
+  
+  
+  ------------------------------------------------------------------------------------
 
 
 ###Rake tasks###
@@ -47,6 +52,9 @@ Tools included
   Execute the below command in the root directory and all files in the output will be send to the W3C Validator
   
   `rake validate`
+  
+  
+  ------------------------------------------------------------------------------------
   
   
 ###Nanoc Helpers###
