@@ -1,10 +1,3 @@
-def current? id, wrap = nil
-  if @item[:nav_id] == id || @item[:sub_nav_id] == id
-    wrap.nil? ? 'active' : %~#{wrap}="active"~
-  end
-end
-
-
 def breadcrumbs(opts = {})
   opts = { :class => 'breadcrumbs', 
            :separator => ' &raquo; ', 
