@@ -1,0 +1,45 @@
+--- 
+title: Page index
+---
+
+<h1>Page index</h1><br /><br />
+
+
+  <ol style="font-size: 1.1em; line-height: 1.4em; padding-left:4em">
+		<%# begin %>
+		<%# @items.sort{|a,b| a[:title] <=> b[:title] }.each do |item| %>
+    <% @items.each do |item| %>
+      <% if item.path != '/' %>
+  	    <li style="padding-bottom: 0.7em">
+  	      <p>
+  	        <%=link_to( item[:title].nil? ? item.path : item[:title] , relative_path_to(item) )%>
+  	      </p>
+  	      <span style="color:#999999"><%= item.path %></span>
+  	    </li>
+  	  <%end%>
+    <% end %>
+    <%# rescue
+			raise @items.map{|i| [i[:title], i.identifier]}.inspect
+		end %>
+  </ol>
+  
+  
+  
+  <!-- ============================ -->
+  <!-- == EXAMPLES OF CAPTURING === -->
+  <!-- = See layouts/default.html = -->
+  <!-- ============================ -->
+  
+  <% content_for :custom_javascripts do %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <% end %>
+  
+  <% content_for :embeded_javascripts do %>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        
+      });
+    </script>
+  <% end %>
+
+

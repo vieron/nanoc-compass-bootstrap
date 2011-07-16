@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    
+    <link rel="stylesheet" type="text/css" href="<%=relative_path_to('/stylesheets/main.css')%>" media="all">
+    <%= @item[:content_for_custom_stylesheets] %>
+    
+  </head>
+  <body>
+    
+    <%= render "partials/shared/header"%> 
+    
+    <div id="main">
+      <%= yield %>
+    </div>
+    
+    <%= @item[:content_for_custom_javascripts] %>
+    <%= @item[:content_for_embeded_javascripts] %>
+    
+  </body>
+</html>
