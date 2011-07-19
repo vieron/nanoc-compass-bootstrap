@@ -40,7 +40,7 @@ Tools included
   
   https://github.com/jhardy/OMG-TEXT
   The omg-text extension provides a mixin with a simple syntax for creating your awesome text shadows. There are three shadow styles for you choose from, flat, shaded, and offset.
-  
+
   
   ------------------------------------------------------------------------------------
 
@@ -53,6 +53,12 @@ Tools included
   
   `rake validate`
   
+- **Optimize .png files with pngcrush** 
+  Requires pngcrush, you can install it with Homebrew so:
+  
+    `brew install pngcrush`
+
+
   
   ------------------------------------------------------------------------------------
   
@@ -62,7 +68,17 @@ Tools included
 - *Html Breadcrumbs*
 
 - *SEO friendly title*
-   
+
+  ------------------------------------------------------------------------------------  
+
+###Nanoc Filters###
+
+- *Minify*
+  
+  Minify .js .css, .scss in content/assets/(images/javascripts) and writes the minified version to output/assets/**
+
+  `filter :minify` inside a compile rule
+
 
   
 
