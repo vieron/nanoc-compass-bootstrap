@@ -8,3 +8,6 @@ gem 'json'
 gem 'alexdunae-w3c_validators'
 gem 'compass-rgbapng'
 gem 'omg-text'
+
+gem 'rainpress', '~>1.0'
+gem 'jsmin', '~>1.0'
