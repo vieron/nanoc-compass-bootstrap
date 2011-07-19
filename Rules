@@ -23,27 +23,32 @@ compile '*' do
     when 'html'
       filter :erb
       layout 'default'
-      
     when 'scss'
       filter :sass, Compass.sass_engine_options
-      layout 'blank'      
+      layout 'blank'
+    when 'js'
+      filter :minify
+      layout 'blank'
   end
 end
 
 
-route '/stylesheets/partials/_*/' do
+
+route '/assets/stylesheets/partials/_*/' do
   # don't output sass partials, so return nil
   nil
 end
 
+route '/assets/*/' do
+  if item[:extension] == 'scss'
+    item.identifier.chop + '.css'
+  else
+    item.identifier.chop+'.'+item[:extension]
+  end
+end
 
 route '*' do
-  case item[:extension]
-    when 'html'
-      item.identifier + 'index.html'
-    when 'scss'
-      item.identifier.chop + '.css'
-  end
+  item.identifier + 'index.html'
 end
 
 
