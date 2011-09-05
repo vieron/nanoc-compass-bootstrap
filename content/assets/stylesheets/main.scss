@@ -1,0 +1,89 @@
+@import "compass/css3";
+@import "rgbapng";
+@import "omg-text";
+
+@import "partials/mixins";
+@import "partials/normalization";
+@import "partials/extras";
+@import "partials/layout";
+@import "partials/typography";
+@import "partials/responsive";
+
+// ============
+// = EXAMPLES =
+// ============
+@mixin rounded-top($side, $radius) {
+  border-#{$side}-radius: $radius;
+  -moz-border-radius-#{$side}: $radius;
+  -webkit-border-#{$side}-radius: $radius;
+}
+
+.class {
+/*  @include rounded-top($side: left, $radius: 20px);*/
+  @include rgba-background( rgba(255,0,0,.3) );  
+  color:red;
+}
+
+// ==============
+// = PROTOTYPES =
+// ==============
+.clearfix {
+  @include clearfix;
+}
+
+
+// ===========
+// = GENERAL =
+// ===========
+.wrapper {
+  background:red;
+}
+
+
+
+// ==================
+// = IMAGE SPRITING =
+// ==================
+$icon: sprite-map("icon/*.png", $position: 0%, $spacing: 15px, $repeat: no-repeat);
+.icon{
+  padding-left:25px;
+  margin-right:10px;
+  background-image: sprite-url($icon);
+  background-repeat:no-repeat;
+}
+
+.add_to_calendar, 
+.add_to_favorites,
+.add_to_my_list {
+  @extend .icon;
+}
+
+
+.add_to_calendar {
+  background-position: sprite-position($icon, add_to_calendar);
+}
+.add_to_calendar:hover {
+  background-position: sprite-position($icon, add_to_calendar_hover);
+}
+
+.add_to_favorites {                         
+  background-position: sprite-position($icon, add_to_favorites);
+}
+.add_to_favorites:hover {                         
+  background-position: sprite-position($icon, add_to_favorites_hover);
+}
+
+.add_to_my_list {
+  background-position: sprite-position($icon, add_to_my_list, 0, 2);
+}
+.add_to_my_list:hover {
+  background-position: sprite-position($icon, add_to_my_list_hover, 0, 2);
+}
+
+
+
+
+
+
+
+

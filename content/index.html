@@ -8,16 +8,19 @@ title: Page index
   <ol style="font-size: 1.1em; line-height: 1.4em; padding-left:4em">
 		<%# begin %>
 		<%# @items.sort{|a,b| a[:title] <=> b[:title] }.each do |item| %>
-    <% @items.each do |item| %>
-      <% if item.path != '/' %>
-  	    <li style="padding-bottom: 0.7em">
-  	      <p>
-  	        <%=link_to( item[:title].nil? ? item.path : item[:title] , relative_path_to(item) )%>
-  	      </p>
-  	      <span style="color:#999999"><%= item.path %></span>
-  	    </li>
-  	  <%end%>
-    <% end %>
+		<?php if (false): ?>
+		  <% @items.reject{|item| item.path.nil? || item.path.match("/partials/")}.each do |item| %>
+        <% if item.path != '/' %>
+    	    <li style="padding-bottom: 0.7em">
+    	      <p>
+    	        <%=link_to( item[:title].nil? ? item.path : item[:title] , relative_path_to(item) )%>
+    	      </p>
+    	      <span style="color:#999999"><%= item.path %></span>
+    	    </li>
+    	  <%end%>
+      <% end %>
+		<?php endif ?>
+    
     <%# rescue
 			raise @items.map{|i| [i[:title], i.identifier]}.inspect
 		end %>

@@ -1,0 +1,24 @@
+/**
+ * Micro clearfix hack
+ * @by Nicolas Gallagher @necolas
+ * @link http://nicolasgallagher.com/micro-clearfix-hack/
+ */
+@mixin clearfix
+{
+    // For modern browsers
+    &:before,
+    &:after{
+        content:"";
+        display:block;
+        overflow:hidden;
+    }
+
+    &:after{
+        clear:both;
+    }
+
+    //For IE 6/7 (trigger hasLayout)
+    &{
+        zoom: 1;
+    }
+}

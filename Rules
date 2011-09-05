@@ -11,9 +11,9 @@
 #   because “*” matches zero or more characters.
 
 require 'compass'
-Compass.add_project_configuration('compass/config.rb')
+Compass.add_project_configuration('compass_config.rb')
 
-compile '/stylesheets/partials/*/' do
+compile '/assets/stylesheets/partials/*/' do
   # don’t compile partials
 end
 
@@ -25,9 +25,10 @@ compile '*' do
       layout 'default'
     when 'scss'
       filter :sass, Compass.sass_engine_options
+      filter :relativize_paths, :type => :css
       layout 'blank'
     when 'js'
-      filter :minify
+      # filter :minify
       layout 'blank'
   end
 end
