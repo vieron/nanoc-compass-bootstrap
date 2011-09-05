@@ -2,7 +2,8 @@ output/
 content/1.html
 content/2.html
 content/3.html
-content/*/*
+content/1/
 .sass-cache/
 Gemfile.lock
 tmp/
+.rvmrc
