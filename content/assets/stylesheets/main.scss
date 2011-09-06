@@ -6,7 +6,7 @@
 @import "partials/normalization";
 @import "partials/extras";
 @import "partials/layout";
-@import "partials/typography";
+@import "partials/modules";
 @import "partials/responsive";
 
 // ============
@@ -31,6 +31,12 @@
   @include clearfix;
 }
 
+.icon{
+  padding-left:25px;
+  margin-right:10px;
+  background-repeat:no-repeat;
+}
+
 
 // ===========
 // = GENERAL =
@@ -45,19 +51,13 @@
 // = IMAGE SPRITING =
 // ==================
 $icon: sprite-map("icon/*.png", $position: 0%, $spacing: 15px, $repeat: no-repeat);
-.icon{
-  padding-left:25px;
-  margin-right:10px;
-  background-image: sprite-url($icon);
-  background-repeat:no-repeat;
-}
 
 .add_to_calendar, 
 .add_to_favorites,
-.add_to_my_list {
+.add_to_my_list {  
   @extend .icon;
+  background-image: sprite-url($icon);
 }
-
 
 .add_to_calendar {
   background-position: sprite-position($icon, add_to_calendar);

@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <title><%= title %></title>
     
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    
     <link rel="stylesheet" type="text/css" href="<%=relative_path_to('/assets/stylesheets/main.css')%>" media="all">
-    <%= @item[:content_for_custom_stylesheets] %>
+    <%= content_for(@item, :custom_stylesheets) %>
     
   </head>
   <body>
@@ -16,8 +18,9 @@
       <%= yield %>
     </div>
     
-    <%= @item[:content_for_custom_javascripts] %>
-    <%= @item[:content_for_embeded_javascripts] %>
+     <%= content_for(@item, :custom_javascripts) %>
+     <%= content_for(@item, :embeded_javascripts) %>
+    
     
   </body>
 </html>
